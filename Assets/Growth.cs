@@ -11,8 +11,13 @@ public class Growth : MonoBehaviour {
 
     int maxCreate;
 
-	// Use this for initialization
-	void Start () {
+    bool superShrink;
+
+    Collider2D coll;
+    SpriteRenderer rend;
+
+    // Use this for initialization
+    void Start () {
         nextSpawn = 5;
         eng = FindObjectOfType<GameEngine>();
         //transform.localScale = new Vector3(0.01f, 0.01f, 1);
@@ -21,20 +26,50 @@ public class Growth : MonoBehaviour {
         //print(transform.position.magnitude);
         //if (transform.position.magnitude > 6)
         //    Destroy(this.gameObject);
-        
+        coll = GetComponent<Collider2D>();
+        rend = GetComponent<SpriteRenderer>();
+
     }
 	
 	// Update is called once per frame
 	void Update () {
+        GetComponent<Rigidbody2D>().WakeUp();
+  
+
+        Vector3 mp = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
+                   Input.mousePosition.y, Camera.main.nearClipPlane));
+        mp.z = 0;
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (coll.OverlapPoint(mp))
+            {
+                superShrinkReaction();
+            }
+        }
+
+
         float td = Time.deltaTime;
 
         float curSize = transform.localScale.x;
         Vector3 globScale = transform.lossyScale;
 
         //print(curSize);
-        if (curSize < maxSize)
+        if(superShrink)
         {
-            transform.localScale = new Vector3(curSize + td * 0.1f, curSize + td * 0.1f);
+            //superShrinkReaction();
+            transform.localScale = new Vector3(curSize - td * 0.3f, curSize - td * 0.3f);
+            Color curCol = rend.color;
+            rend.color = new Color(curCol.r - 0.01f, curCol.g, curCol.b, curCol.a);
+        }
+        else if (curSize < maxSize)
+        {
+            transform.localScale = new Vector3(curSize + td * eng.growRate, curSize + td * eng.growRate);
+        }
+
+        if (curSize < 0)
+        {
+            Destroy(this.gameObject);
+            return;
         }
 
         if(curSize > 2)
@@ -54,7 +89,7 @@ public class Growth : MonoBehaviour {
                 newGrowth.transform.localScale = new Vector3(0.01f, 0.01f, 1);
 
                 //Color rndCol = new Color(Random.Range(0.7f, 1f), Random.Range(0.3f, 0.7f), Random.Range(0.3f, 0.7f), 1);
-                newGrowth.GetComponent<SpriteRenderer>().color = GetComponent<SpriteRenderer>().color;
+                newGrowth.GetComponent<SpriteRenderer>().color = rend.color;
 
                 newGrowth.GetComponent<Growth>().maxSize = Random.Range(1.5f, 3);
 
@@ -63,6 +98,27 @@ public class Growth : MonoBehaviour {
                 eng.lastGrowthSpawn = 0;
             }
         }
+
+
         
 	}
+
+    void superShrinkReaction()
+    {
+        superShrink = true;
+        Growth[] grs = FindObjectsOfType<Growth>();
+        print(grs.Length);
+        foreach(Growth gr in grs)
+        {
+            //print(gr.superShrink + " " + Physics2D.IsTouching(coll, gr.coll));
+            //print(coll + " " + gr.coll);
+            if(gr.superShrink == false)
+                if (Physics2D.IsTouching(coll, gr.coll))
+                {
+                    gr.superShrinkReaction();
+
+                    return;
+                }
+        }
+    }
 }
