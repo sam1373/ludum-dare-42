@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
     GameEngine eng;
     Rigidbody2D rb2d;
 
+    float nextShot;
+
     
 	// Use this for initialization
 	void Start () {
@@ -15,7 +17,7 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float speed = 0.1f;
+        float speed = 0.2f;
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -27,11 +29,25 @@ public class Player : MonoBehaviour {
         Vector3 mp = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
                    Input.mousePosition.y, Camera.main.nearClipPlane));
         mp.z = 0;
-        if (eng.mouseDown)
+        if (eng.mouseDown && nextShot < 0)
         {
             Vector3 direction = mp - transform.position;
             direction.Normalize();
             GameObject newShot = Instantiate(eng.shotPrefab, transform.position, new Quaternion());
+            newShot.GetComponent<Rigidbody2D>().velocity = direction * 6;
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), newShot.GetComponent<Collider2D>());
+
+            nextShot += 0.1f;
+        }else
+        {
+            nextShot -= Time.deltaTime;
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 direction = mp - transform.position;
+            direction.Normalize();
+            GameObject newShot = Instantiate(eng.superShotPrefab, transform.position, new Quaternion());
             newShot.GetComponent<Rigidbody2D>().velocity = direction * 6;
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), newShot.GetComponent<Collider2D>());
         }

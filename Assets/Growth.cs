@@ -35,17 +35,18 @@ public class Growth : MonoBehaviour {
 	void Update () {
         GetComponent<Rigidbody2D>().WakeUp();
   
-
+        
         Vector3 mp = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
                    Input.mousePosition.y, Camera.main.nearClipPlane));
         mp.z = 0;
+        /*
         if (Input.GetMouseButtonDown(1))
         {
             if (coll.OverlapPoint(mp))
             {
                 superShrinkReaction();
             }
-        }
+        }*/
 
 
         float td = Time.deltaTime;
@@ -79,12 +80,18 @@ public class Growth : MonoBehaviour {
         {
             Vector3 rndVec = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
             rndVec.Normalize();
-            rndVec = rndVec * globScale.x * Random.Range(0.4f, 0.5f);
+            rndVec *= 6;
+
+            Vector3 dir = (rndVec - transform.position);
+            dir.Normalize();
+
+
+            dir *= globScale.x * Random.Range(0.4f, 0.5f);
             if ((transform.position + rndVec).magnitude < 6)
             {
 
 
-                GameObject newGrowth = Instantiate(eng.growthPrefab, transform.position + rndVec, new Quaternion());
+                GameObject newGrowth = Instantiate(eng.growthPrefab, transform.position + dir, new Quaternion());
 
                 newGrowth.transform.localScale = new Vector3(0.01f, 0.01f, 1);
 
@@ -93,7 +100,7 @@ public class Growth : MonoBehaviour {
 
                 newGrowth.GetComponent<Growth>().maxSize = Random.Range(1.5f, 3);
 
-                nextSpawn = 6;
+                nextSpawn = 6 * (0.1f / eng.growRate);
                 maxCreate--;
                 eng.lastGrowthSpawn = 0;
             }
@@ -103,7 +110,7 @@ public class Growth : MonoBehaviour {
         
 	}
 
-    void superShrinkReaction()
+    public void superShrinkReaction()
     {
         superShrink = true;
         Growth[] grs = FindObjectsOfType<Growth>();
@@ -120,5 +127,11 @@ public class Growth : MonoBehaviour {
                     return;
                 }
         }
+    }
+
+    public void reduceSize(float x)
+    {
+        float curSize = transform.localScale.x;
+        transform.localScale = new Vector3(curSize - x, curSize - x);
     }
 }

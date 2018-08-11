@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{A4419F9D-589F-D890-B584-EBC36D292C6E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -52,152 +51,155 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameEngine.cs" />
-    <Compile Include="Assets\Growth.cs" />
-    <Compile Include="Assets\Light2D\Scripts\CustomSprite.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightingSystem.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightingSystemPrefabConfig.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightObstacleGenerator.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightObstacleMesh.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightObstacleSprite.cs" />
-    <Compile Include="Assets\Light2D\Scripts\LightSprite.cs" />
-    <Compile Include="Assets\Light2D\Scripts\ObstacleCameraPostPorcessor.cs" />
-    <Compile Include="Assets\Light2D\Scripts\Point2.cs" />
-    <Compile Include="Assets\Light2D\Scripts\Util.cs" />
-    <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\DitheringComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\FogComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\BloomModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\GrainModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\VignetteModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
-    <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
-    <Compile Include="Assets\Shot.cs" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\FastBlur.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light70.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
-    <None Include="Assets\Light2D\changelog.txt" />
-    <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightIgnoreObstacles.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\NormalMap.shader" />
-    <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light9.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\NormalMappedLight.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light60.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightBase.cginc" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightBlender.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light1.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light50.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light80.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light20.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\AmbientLightComputer.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light40.shader" />
-    <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light90.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightOverlaySingleCamera.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
-    <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightOverlay.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\TransparentDualColorNormalMapped.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
-    <None Include="Assets\Light2D\Resources\Shaders\TransparentNormalMapped.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\AlphaReplace.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
-    <None Include="Assets\Light2D\Resources\Shaders\Light30.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
-    <None Include="Assets\Light2D\Resources\Shaders\ObstacleTexturePostProcessor.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
-    <None Include="Assets\Light2D\Resources\Shaders\LightAuto.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Timeline">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.HoloLens">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
+     <Compile Include="Assets\Chunk.cs" />
+     <Compile Include="Assets\Enemy.cs" />
+     <Compile Include="Assets\GameEngine.cs" />
+     <Compile Include="Assets\Growth.cs" />
+     <Compile Include="Assets\Light2D\Scripts\CustomSprite.cs" />
+     <Compile Include="Assets\Light2D\Scripts\LightingSystem.cs" />
+     <Compile Include="Assets\Light2D\Scripts\LightingSystemPrefabConfig.cs" />
+     <Compile Include="Assets\Light2D\Scripts\LightObstacleGenerator.cs" />
+     <Compile Include="Assets\Light2D\Scripts\LightObstacleMesh.cs" />
+     <Compile Include="Assets\Light2D\Scripts\LightObstacleSprite.cs" />
+     <Compile Include="Assets\Light2D\Scripts\LightSprite.cs" />
+     <Compile Include="Assets\Light2D\Scripts\ObstacleCameraPostPorcessor.cs" />
+     <Compile Include="Assets\Light2D\Scripts\Point2.cs" />
+     <Compile Include="Assets\Light2D\Scripts\Util.cs" />
+     <Compile Include="Assets\Player.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\DitheringComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\FogComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\BloomModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\GrainModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\VignetteModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
+     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\Shot.cs" />
+     <Compile Include="Assets\SuperShot.cs" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\FastBlur.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light70.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
+     <None Include="Assets\Light2D\changelog.txt" />
+     <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\LightIgnoreObstacles.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\NormalMap.shader" />
+     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light9.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\NormalMappedLight.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light60.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\LightBase.cginc" />
+     <None Include="Assets\Light2D\Resources\Shaders\LightBlender.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light1.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light50.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light80.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light20.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\AmbientLightComputer.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light40.shader" />
+     <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light90.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\LightOverlaySingleCamera.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
+     <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\LightOverlay.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\TransparentDualColorNormalMapped.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
+     <None Include="Assets\Light2D\Resources\Shaders\TransparentNormalMapped.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\AlphaReplace.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
+     <None Include="Assets\Light2D\Resources\Shaders\Light30.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
+     <None Include="Assets\Light2D\Resources\Shaders\ObstacleTexturePostProcessor.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
+     <None Include="Assets\Light2D\Resources\Shaders\LightAuto.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -207,4 +209,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>
