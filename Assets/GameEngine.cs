@@ -9,6 +9,7 @@ public class GameEngine : MonoBehaviour {
     public GameObject superShotPrefab;
     public GameObject enemyPrefab;
     public GameObject chunkPrefab;
+    public GameObject corrPrefab;
 
     public int totalGrowth;
 

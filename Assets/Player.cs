@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
         {
             nextShot -= Time.deltaTime;
         }
-
+        /*
         if (Input.GetMouseButtonDown(1))
         {
             Vector3 direction = mp - transform.position;
@@ -50,6 +50,6 @@ public class Player : MonoBehaviour {
             GameObject newShot = Instantiate(eng.superShotPrefab, transform.position, new Quaternion());
             newShot.GetComponent<Rigidbody2D>().velocity = direction * 6;
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), newShot.GetComponent<Collider2D>());
-        }
+        }*/
     }
 }

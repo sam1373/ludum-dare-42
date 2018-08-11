@@ -76,7 +76,7 @@ public class Growth : MonoBehaviour {
         if(curSize > 2)
             nextSpawn -= td;
 
-        if (nextSpawn < 0 && maxCreate > 0 && eng.totalGrowth < 50)
+        if (nextSpawn < 0 && maxCreate > 0 && eng.totalGrowth < 80)
         {
             Vector3 rndVec = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
             rndVec.Normalize();
