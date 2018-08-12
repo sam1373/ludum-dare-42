@@ -107,14 +107,26 @@ public class Growth : MonoBehaviour {
         }
 
 
-        
+        Core core = FindObjectOfType<Core>();
+        if (Physics2D.IsTouching(coll, core.GetComponent<Collider2D>()))
+        {
+            core.power -= Time.deltaTime * 10;
+            FindObjectOfType<MainCamera>().shake += 0.01f;
+        }
+
+        Lazer lazer = FindObjectOfType<Lazer>();
+        if(lazer != null)
+        {
+            if (Physics2D.IsTouching(coll, lazer.GetComponent<Collider2D>()))
+                superShrinkReaction();
+        }
 	}
 
     public void superShrinkReaction()
     {
         superShrink = true;
         Growth[] grs = FindObjectsOfType<Growth>();
-        print(grs.Length);
+
         foreach(Growth gr in grs)
         {
             //print(gr.superShrink + " " + Physics2D.IsTouching(coll, gr.coll));

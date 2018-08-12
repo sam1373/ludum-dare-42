@@ -10,6 +10,7 @@ public class GameEngine : MonoBehaviour {
     public GameObject enemyPrefab;
     public GameObject chunkPrefab;
     public GameObject corrPrefab;
+    public GameObject lazerPrefab;
 
     public int totalGrowth;
 
@@ -21,14 +22,16 @@ public class GameEngine : MonoBehaviour {
 
     float nextWave;
 
-    float rapidGrowthPeriod;
+    public float rapidGrowthPeriod;
+
+    public float timer;
 
     float defGR, rapidGR;
 
 	// Use this for initialization
 	void Start () {
         defGR = 0.3f;
-        rapidGR = 0.6f;
+        rapidGR = 0.8f;
 
 
         growRate = 0.1f;//default
@@ -43,12 +46,15 @@ public class GameEngine : MonoBehaviour {
             spawnGrowth();
 
         rapidGrowthPeriod = 0;
+        timer = 0;
 
 	}
     
 	
 	// Update is called once per frame
 	void Update () {
+        timer += Time.deltaTime;
+
         Vector3 worldMousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
                    Input.mousePosition.y, Camera.main.nearClipPlane));
         worldMousePos.z = 0;
@@ -56,8 +62,11 @@ public class GameEngine : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E))
             spawnWave();
 
+        if (Input.GetKeyDown(KeyCode.R))
+            FindObjectOfType<Core>().lCharge = 100;
+
         if (Input.GetKeyDown(KeyCode.Space))
-            rapidGrowthPeriod = 5;
+            rapidGrowthPeriod = 9;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -89,7 +98,7 @@ public class GameEngine : MonoBehaviour {
 
         lastGrowthSpawn += Time.deltaTime;
 
-        if(lastGrowthSpawn > 10 && totalGrowth < 50)
+        if(lastGrowthSpawn > 10 * (0.3f / growRate) && totalGrowth < 50)
         {
             spawnGrowth();
         }

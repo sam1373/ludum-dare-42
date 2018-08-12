@@ -1,5 +1,5 @@
 WindowsStandalone
-60dcf599a58ce4c73cea172b92c24519 Assembly-CSharp.dll:.GameEngine
+123beed79c2b88d4852f098553c5fdb9 Assembly-CSharp.dll:.GameEngine
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9f07aaefd0255462bb6e4f9e5da6b2d4 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -143,7 +143,12 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.VR.WSA.SpatialMappingRenderer
 f671a42aea5f34fec6a4450a3668c615 Assembly-CSharp.dll:UnityEngine.PostProcessing.PostProcessingProfile
+f664eb69be4aaae471dfe0fb11366dab Assembly-CSharp.dll:.Core
 7b6f97c3f035dba6310482a12064963a Assembly-CSharp.dll:Light2D.CustomSprite
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Chunk
 23dc9c90959c1ae5ebbd21b3713e1b7a Assembly-CSharp.dll:Light2D.LightingSystemPrefabConfig
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Core
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CoreText
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Lazer
+991e1f2254fafcf3a7ed2f27cef35cd2 Assembly-CSharp.dll:.MainCamera
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RGText
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TimerText

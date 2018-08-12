@@ -53,9 +53,11 @@
   <ItemGroup>
      <Compile Include="Assets\Chunk.cs" />
      <Compile Include="Assets\Core.cs" />
+     <Compile Include="Assets\CoreText.cs" />
      <Compile Include="Assets\Enemy.cs" />
      <Compile Include="Assets\GameEngine.cs" />
      <Compile Include="Assets\Growth.cs" />
+     <Compile Include="Assets\Lazer.cs" />
      <Compile Include="Assets\Light2D\Scripts\CustomSprite.cs" />
      <Compile Include="Assets\Light2D\Scripts\LightingSystem.cs" />
      <Compile Include="Assets\Light2D\Scripts\LightingSystemPrefabConfig.cs" />
@@ -66,6 +68,7 @@
      <Compile Include="Assets\Light2D\Scripts\ObstacleCameraPostPorcessor.cs" />
      <Compile Include="Assets\Light2D\Scripts\Point2.cs" />
      <Compile Include="Assets\Light2D\Scripts\Util.cs" />
+     <Compile Include="Assets\MainCamera.cs" />
      <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
@@ -112,8 +115,10 @@
      <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
      <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
      <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+     <Compile Include="Assets\RGText.cs" />
      <Compile Include="Assets\Shot.cs" />
      <Compile Include="Assets\SuperShot.cs" />
+     <Compile Include="Assets\TimerText.cs" />
      <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
      <None Include="Assets\Light2D\Resources\Shaders\FastBlur.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />

@@ -8,16 +8,23 @@ public class Player : MonoBehaviour {
 
     float nextShot;
 
-    
+    public float tripleShot;
 	// Use this for initialization
 	void Start () {
         eng = FindObjectOfType<GameEngine>();
         rb2d = GetComponent<Rigidbody2D>();
+
+        tripleShot = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         float speed = 0.2f;
+
+        if(tripleShot > 0)
+        {
+            tripleShot -= Time.deltaTime;
+        }
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -36,6 +43,21 @@ public class Player : MonoBehaviour {
             GameObject newShot = Instantiate(eng.shotPrefab, transform.position, new Quaternion());
             newShot.GetComponent<Rigidbody2D>().velocity = direction * 6;
             Physics2D.IgnoreCollision(GetComponent<Collider2D>(), newShot.GetComponent<Collider2D>());
+
+            if (tripleShot > 0)
+            {
+                float dirAng = Mathf.Atan2(direction.y, direction.x) + 0.1f;
+                direction = new Vector3(Mathf.Cos(dirAng), Mathf.Sin(dirAng));
+                newShot = Instantiate(eng.shotPrefab, transform.position, new Quaternion());
+                newShot.GetComponent<Rigidbody2D>().velocity = direction * 6;
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), newShot.GetComponent<Collider2D>());
+
+                dirAng -= 0.2f;
+                direction = new Vector3(Mathf.Cos(dirAng), Mathf.Sin(dirAng));
+                newShot = Instantiate(eng.shotPrefab, transform.position, new Quaternion());
+                newShot.GetComponent<Rigidbody2D>().velocity = direction * 6;
+                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), newShot.GetComponent<Collider2D>());
+            }
 
             nextShot += 0.1f;
         }else

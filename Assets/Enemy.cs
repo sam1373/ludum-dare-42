@@ -86,5 +86,7 @@ public class Enemy : MonoBehaviour {
             newCh.GetComponent<SpriteRenderer>().color = rend.color;
         }
         Destroy(gameObject);
+
+        FindObjectOfType<MainCamera>().shake += 0.06f;
     }
 }
